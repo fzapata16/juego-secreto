@@ -19,7 +19,6 @@ function newGame() {
   // intentos = intentos * level;
   condicionesIniciales();
   numeroSecreto = generarNumeroSecreto();
-
   intentos = level * maxIntents;
   asignarTextoElemento("#level", level);
   asignarTextoElemento("#intentos", intentos);
@@ -71,14 +70,18 @@ function play() {
   let numeroDeUsuario = parseInt(input.value);
 
   if (numeroDeUsuario === numeroSecreto) {
+
+    let winIn = (((level * maxIntents) - intentos) + 1)
+
     asignarTextoElemento(
       "p",
-      `Acertaste el número en ${intentos} ${intentos === 1 ? "vez" : "veces"}`,
+      `Acertaste el número en ${winIn} ${winIn === 1 ? "vez" : "veces"}`,
     );
     input.setAttribute("disabled", "true");
     newGameButton.removeAttribute("disabled")
     input.className += " bg-green";
     level++;
+
     numeroMaximo = numeroMaximo + 10
     playButtonDisable(true)
     asignarTextoElemento("#intentos", intentos);
@@ -104,7 +107,6 @@ function gameOver() {
   input.type = "text";
   setTimeout(function () {
     playButtonDisable(true)
-    console.log("perdiste...");
     input.value = "Game Over";
     input.setAttribute("disabled", "true");
     input.classList.add("bg-red");
