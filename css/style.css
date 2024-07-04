@@ -1,0 +1,220 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+html {
+  height: 100%;
+}
+
+
+body {
+  background: linear-gradient(#1354a5 0%,
+      #041832 33.33%,
+      #041832 66.67%,
+      #01080e 100%);
+  /* height: 100vh; */
+
+  height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body::before {
+  background-image: url("/assets/img/code.png");
+  background-repeat: no-repeat;
+  background-position: right;
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.4;
+}
+
+.container {
+  display: flex;
+  width: 1200px;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 24px;
+  border: 1px solid #1875e8;
+  box-shadow: 4px 4px 20px 0px rgba(1, 8, 14, 0.15);
+  background-image: url("/assets/img/Ruido.png");
+  background-size: 100% 100%;
+  position: relative;
+  padding: 5%;
+  gap: 10px;
+}
+
+.container__contenido {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+}
+
+.container__informaciones {
+  flex: 1;
+  padding: 3rem;
+  gap: 20px;
+}
+
+.container__informaciones__score {
+  display: flex;
+  justify-content: right;
+  vertical-align: middle;
+}
+
+.container__informaciones__score__board {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  background-color: rgb(15, 15, 15);
+  opacity: 0.4;
+  padding: 15px;
+  border-radius: 95% 5%;
+}
+
+.container__informaciones__score__board__value {
+  padding: 4px 15px 4px 15px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  border-radius: 95% 5%;
+}
+
+.container_texto__level {
+  font-size: 1.5rem;
+}
+
+.container_texto__intentos {
+  font-size: 1.5rem;
+}
+
+.container__texto {
+  display: flex;
+  flex-direction: column;
+  margin: 16px 0 16px 0;
+  gap: 1rem;
+
+}
+
+
+.container__botones {
+  width: 80%;
+  display: flex;
+  gap: 2em;
+}
+
+.container__botones__boton {
+  border-radius: 16px;
+  background: #1875e8;
+  padding: 16px 24px;
+  width: 100%;
+  font-size: 24px;
+  font-weight: 700;
+  border: none;
+  margin-top: 2rem;
+}
+
+.container__botones__boton:disabled {
+  background: #898989;
+}
+
+
+
+.container__texto-azul {
+  color: #1875e8;
+}
+
+
+.container__input {
+  width: 40%;
+  height: 72px;
+  border-radius: 16px;
+  background-color: #fff;
+  border: none;
+  color: #1875e8;
+  caret-color: #1875e8;
+  padding: 2rem;
+  font-size: 24px;
+  font-weight: 700;
+  font-family: "Inter", sans-serif;
+  text-align: center;
+}
+
+.bg-green {
+  background-color: greenyellow;
+}
+
+.bg-red {
+  background-color: red;
+}
+
+
+
+h1 {
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 3rem;
+}
+
+p,
+button {
+  font-family: "Inter", sans-serif;
+}
+
+.texto__parrafo {
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
+
+/* ANIMATIONS */
+
+
+
+.bounce-top {
+  overflow: hidden;
+  /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange;
+  /* The typwriter cursor */
+  white-space: nowrap;
+  /* Keeps the content on a single line */
+  margin: 0 auto;
+  /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em;
+  /* Adjust as needed */
+  animation:
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0
+  }
+
+  to {
+    width: 100%
+  }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+
+  from,
+  to {
+    border-color: transparent
+  }
+
+  50% {
+    border-color: orange;
+  }
+}
